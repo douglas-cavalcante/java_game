@@ -4,12 +4,43 @@ import javax.swing.JLabel;
 
 public class DesenhoMovel extends Desenho {
 
-    //constructor herdado
+    private ArrayList<JLabel> bolsa = new ArrayList();
+
     public DesenhoMovel(String path, int x, int y) {
         super(path, x, y);
     }
 
-    private ArrayList<JLabel> bolsa = new ArrayList();
+    public void moverCima() throws LimiteBackgroundException {
+        if ((this.getY() - 10) > 0) {
+            this.setY(this.getY() - 10);
+        } else {
+            throw new LimiteBackgroundException();
+        }
+    }
+
+    public void moverBaixo() throws LimiteBackgroundException {
+        if ((this.getY() + 10) < 410) {
+            this.setY(this.getY() + 10);
+        } else {
+            throw new LimiteBackgroundException();
+        }
+    }
+
+    public void moverEsquerda() throws LimiteBackgroundException {
+        if ((this.getX() + 10) <= 1150) {
+            this.setX(this.getX() + 10);
+        } else {
+            throw new LimiteBackgroundException();
+        }
+    }
+
+    public void moverDireita() throws LimiteBackgroundException {
+        if ((this.getX() - 10) >= 0) {
+            this.setX(this.getX() - 10);
+        } else {
+            throw new LimiteBackgroundException();
+        }
+    }
 
     public void addItem(JLabel esfera) {
         if (!(this.bolsa.contains(esfera))) {
@@ -20,21 +51,5 @@ public class DesenhoMovel extends Desenho {
     public int getQuantidade() {
         return this.bolsa.size();
     }
-
-    public void moverCima() {
-        this.setY(this.getY() - 10);
-    }
-
-    public void moverBaixo() {
-        this.setY(this.getY() + 10);
-    }
-
-    public void moverDireita() {
-        this.setX(this.getX() - 10);
-    }
-
-    public void moverEsquerda() {
-        this.setX(this.getX() + 10);
-    }
-
+    
 }

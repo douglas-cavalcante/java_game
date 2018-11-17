@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 public class Desenho {
@@ -5,12 +6,11 @@ public class Desenho {
         private ImageIcon img;
 	private int x;
 	private int y;
-	
+        
        Desenho(String path ,int x , int y) {
           this.img = new ImageIcon(getClass().getResource(path));
           this.x = x;
           this.y = y;
-          
        }
        
 	public ImageIcon getImg() {

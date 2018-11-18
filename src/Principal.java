@@ -1,4 +1,4 @@
-
+// By Henrique Douglas 
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -12,7 +12,8 @@ public class Principal extends JFrame implements KeyListener, Runnable {
     //Background
     Desenho background = new Desenho("images/cenario.gif", 1280, 540);
     JLabel labelFundo = new JLabel(background.getImg());
-
+    
+    //Definicação da localização das esferas
     Desenho ef1 = new Desenho("images/esferas/esfera1.png", 250, 400);
     Desenho ef2 = new Desenho("images/esferas/esfera2.png", 350, 50);
     Desenho ef3 = new Desenho("images/esferas/esfera3.png", 1150, 134);
@@ -78,9 +79,11 @@ public class Principal extends JFrame implements KeyListener, Runnable {
     
 
     public Principal() {
+        
         addKeyListener(this);
         editarJanela();
         editarElementos();
+        
         Thread t1 = new Thread(this);
         t1.start();
     }
@@ -166,11 +169,11 @@ public class Principal extends JFrame implements KeyListener, Runnable {
                     background.setImg("images/shei2.png");
                     labelFundo.setIcon(background.getImg());
                     labelFundo.setBounds(0, 0, labelFundo.getWidth(), labelFundo.getHeight());
-                    JOptionPane.showInputDialog(null, "Qual é o seu 1º Desejo");
+                    JOptionPane.showInputDialog(null, "Qual é o seu 1º Desejo ?");
                     JOptionPane.showMessageDialog(null, "Isso é fácil . Desejo realizado !!!");
-                    JOptionPane.showInputDialog(null, "Qual é seu 2º Desejo");
+                    JOptionPane.showInputDialog(null, "Qual é seu 2º Desejo ?");
                     JOptionPane.showMessageDialog(null, "Isso é fácil . Desejo realizado !!!");
-                    JOptionPane.showInputDialog(null, "Qual é seu 3º Desejo");
+                    JOptionPane.showInputDialog(null, "Qual é seu 3º Desejo ?");
                     JOptionPane.showMessageDialog(null, "Isso é fácil . Desejo realizado !!!");
                     System.exit(0);
                 }

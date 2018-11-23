@@ -1,7 +1,15 @@
-// By Henrique Douglas 
+// By Henrique Douglas
+
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import static java.lang.Thread.sleep;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,14 +20,14 @@ public class Principal extends JFrame implements KeyListener, Runnable {
     //Background
     Desenho background = new Desenho("images/cenario.gif", 1280, 540);
     JLabel labelFundo = new JLabel(background.getImg());
-    
+
     //Definicação da localização das esferas
     Desenho ef1 = new Desenho("images/esferas/esfera1.png", 250, 400);
     Desenho ef2 = new Desenho("images/esferas/esfera2.png", 350, 50);
     Desenho ef3 = new Desenho("images/esferas/esfera3.png", 1150, 134);
     Desenho ef4 = new Desenho("images/esferas/esfera4.png", 700, 200);
     Desenho ef5 = new Desenho("images/esferas/esfera5.png", 400, 223);
-    Desenho ef6 = new Desenho("images/esferas/esfera6.png", 100, 12);
+    Desenho ef6 = new Desenho("images/esferas/esfera6.png", 400, 120);
     Desenho ef7 = new Desenho("images/esferas/esfera7.png", 550, 300);
 
     //Label configs
@@ -35,7 +43,7 @@ public class Principal extends JFrame implements KeyListener, Runnable {
     JLabel personagem = new JLabel(jogador.getImg());
 
     public boolean bateu(Component a, Component b) {
-   
+
         int aX = a.getX();
         int aY = a.getY();
         int ladoDireitoA = aX + a.getWidth();
@@ -76,14 +84,13 @@ public class Principal extends JFrame implements KeyListener, Runnable {
 
         return colisao;
     }
-    
 
     public Principal() {
-        
+
         addKeyListener(this);
         editarJanela();
         editarElementos();
-        
+
         Thread t1 = new Thread(this);
         t1.start();
     }
@@ -175,6 +182,32 @@ public class Principal extends JFrame implements KeyListener, Runnable {
                     JOptionPane.showMessageDialog(null, "Isso é fácil . Desejo realizado !!!");
                     JOptionPane.showInputDialog(null, "Qual é seu 3º Desejo ?");
                     JOptionPane.showMessageDialog(null, "Isso é fácil . Desejo realizado !!!");
+
+                    /*
+                    File file = new File("C:\\Users\\Douglas\\Desktop\\happy.txt");
+                    try {
+                        
+                        FileOutputStream fos = new FileOutputStream(file);
+                        ObjectOutputStream oos = new ObjectOutputStream(fos);
+                        oos.writeObject(jogador);
+                        oos.flush();
+                        oos.close();
+                        fos.flush();
+                        fos.close();
+
+                        FileInputStream fis = new FileInputStream(file);
+                        ObjectInputStream ois = new ObjectInputStream(fis);
+                        DesenhoMovel leitura = (DesenhoMovel) ois.readObject();
+                        JOptionPane.showMessageDialog(null, leitura.getClass());
+                        ois.close();
+                        fis.close();
+
+                    } catch (FileNotFoundException ex) {
+                        JOptionPane.showMessageDialog(null, ex);
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(null, ex);
+                    }
+                     */
                     System.exit(0);
                 }
             } catch (Exception Erro) {

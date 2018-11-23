@@ -1,10 +1,12 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 
-public class DesenhoMovel extends Desenho {
+public class DesenhoMovel extends Desenho implements Serializable{
 
     private ArrayList<JLabel> bolsa = new ArrayList();
 
+   
     public DesenhoMovel(String path, int x, int y) {
         super(path, x, y);
     }

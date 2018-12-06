@@ -14,4 +14,4 @@
     <li>ArrayList</li>
 </ul>
 
-<center><img src="game.jpg"/></center>
+<center><img src="game.png"/></center>

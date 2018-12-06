@@ -5,7 +5,7 @@
   </p>
   
 
-  <center><h2>Recursos do java Utilizado<h2></center>
+  <center><h2>Recursos do java Utilizado</h2></center>
   <ul>
     <li> Herança e implementação de classes</li>
     <li>Exceptions</li>

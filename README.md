@@ -1,14 +1,17 @@
-# Projeto java utilizando os conceitos aprendidos na cadeira de Técnicas de programação do Centro Universitário Farias Brito.
+# Projeto Java utilizando os conceitos aprendidos na cadeira de Técnicas de programação do Centro Universitário Farias Brito.
 
 - Contexto do jogo
-  <p>O personagem principal é o happy do anime Fairy Tail. O objetivo do game é coletar as 7 esferas do dragão dispesas em diferente
-  coordenadas pelo cenário
+  <p>O personagem principal é o <b>happy do anime Fairy Tail</b>. O objetivo do game é coletar as <b>7 esferas do dragão</b> dispesas em diferente coordenadas do cenário
   </p>
   
+
   - Recursos do java Utilizado
-  
-  Herança e implementação de classes
-  Exceptions
-  Threads
-  leitura e escrita de objetos em arquivos
-  ArrayList
+  <ul>
+    <li> Herança e implementação de classes</li>
+    <li>Exceptions</li>
+    <li>Threads</li>
+    <li>leitura e escrita de objetos em arquivos</li>
+    <li>ArrayList</li>
+</ul>
+
+<center><img src="game.jpg"/></center>
